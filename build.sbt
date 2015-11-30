@@ -1,4 +1,4 @@
-name := """futility.js"""
+name := """futilityjs"""
 
 version := "1.0-SNAPSHOT"
 
