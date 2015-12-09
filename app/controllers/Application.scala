@@ -9,4 +9,8 @@ class Application extends Controller {
     Ok(views.html.index("Your new application is ready."))
   }
 
+  def processing = Action {
+    Ok(views.html.processing("Demo Processing.Js Page!"))
+  }
+
 }
