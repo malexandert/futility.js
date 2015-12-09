@@ -42,7 +42,22 @@ int[] rotateCoordinate(float x, float y, float angle) {
 
 // universal helper function for Processing.js - 1.1 does not support ArrayList.addAll yet
 void addAll(ArrayList a, ArrayList b) { 
-    for(Object o: b) { 
-      a.add(o); 
-    }
+  for(Object o: b) { 
+    a.add(o); 
+  }
+}
+
+// a permutation function for int arrays [1..n]
+int[] pi(int n) {
+  int[] base = new int[n];
+  for (int i = 0; i < n; i++) {
+    base[i] = i;
+  }
+  for (int i = 0; i < n; i++) {
+    int k = int(random(i));
+    int temp = base[k];
+    base[k] = base[i];
+    base[i] = temp;
+  }
+  return base;
 }

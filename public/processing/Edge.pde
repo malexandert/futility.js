@@ -9,5 +9,6 @@ class Edge {
 
   void draw() {
     line(n1.x, n1.y, n2.x, n2.y);
+    stroke(255);
   }
 }
