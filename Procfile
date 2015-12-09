@@ -1,1 +1,0 @@
-web: target/universal/stage/bin/futilityjs -Dhttp.port=${PORT} ${JAVA_OPTS}
