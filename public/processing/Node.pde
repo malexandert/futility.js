@@ -2,7 +2,7 @@ class Node {
 	ArrayList neighbors = new ArrayList();
   int x;
   int y;
-  int radius = 40; 
+  int radius = 30; 
   color nodeColor = 255;
 
 	Node(int x, int y) {
