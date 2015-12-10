@@ -1,7 +1,7 @@
 Graph g = new Graph();
 int numNodes = 120;
 ArrayList edgeArray = new ArrayList();
-color[] graphColors = [color(255,0,0), color(0,255,0), color(0,0,255), color(255,0,255), color(0,255,255)];
+color[] graphColors = [color(255,0,0), color(0,255,0), color(0,0,255)];
 int currentNode = 0;
 int[] order = pi(numNodes);
 
