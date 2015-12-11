@@ -9,7 +9,7 @@ void setup() {
   size(window.innerWidth, window.innerHeight);
   makeEdgeArray();
   makeGraph();
-  frameRate(7);
+  frameRate(60);
 }
 
 void draw() {
@@ -32,8 +32,8 @@ void makeGraph() {
   }
 
   for (int[] e: edgeArray) {
-    int coinFlip = int(random(8));
-    if (coinFlip == 7) {
+    int coinFlip = int(random(25));
+    if (coinFlip == 24) {
       g.addEdge((Node) g.nodes.get(e[0]), (Node) g.nodes.get(e[1]));
     }
   }
