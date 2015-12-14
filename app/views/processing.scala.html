@@ -1,9 +1,19 @@
 @(title: String)
 
-<script src="@routes.Assets.versioned("javascripts/processing.js")"></script>
-<canvas data-processing-sources=
-	"@routes.Assets.versioned("processing/Node.pde") 
-	 @routes.Assets.versioned("processing/Graph.pde") 
-	 @routes.Assets.versioned("processing/Util.pde") 
-	 @routes.Assets.versioned("processing/ThreeColorMain.pde")
-	 @routes.Assets.versioned("processing/Edge.pde")"></canvas>
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="@routes.Assets.versioned("javascripts/processing.js")"></script>
+    </head>
+    <body>
+        <canvas data-processing-sources=
+        	"@routes.Assets.versioned("processing/Node.pde")
+        	 @routes.Assets.versioned("processing/Graph.pde")
+        	 @routes.Assets.versioned("processing/Util.pde")
+        	 @routes.Assets.versioned("processing/ThreeColorMain.pde")
+        	 @routes.Assets.versioned("processing/Edge.pde")"></canvas>
+        <script type="application/javascript">
+            var numNodes = 30;
+        </script>
+     </body>
+ </html>

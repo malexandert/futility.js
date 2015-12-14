@@ -37,13 +37,13 @@ int[] rotateCoordinate(float x, float y, float angle) {
   int[] rc = {0,0};
   rc[0] = (int)(x*cos(angle) - y*sin(angle));
   rc[1] = (int)(x*sin(angle) + y*cos(angle));
-  return rc; 
+  return rc;
 }
 
 // universal helper function for Processing.js - 1.1 does not support ArrayList.addAll yet
-void addAll(ArrayList a, ArrayList b) { 
-  for(Object o: b) { 
-    a.add(o); 
+void addAll(ArrayList a, ArrayList b) {
+  for(Object o: b) {
+    a.add(o);
   }
 }
 
@@ -60,4 +60,30 @@ int[] pi(int n) {
     base[i] = temp;
   }
   return base;
+}
+
+color[] randColors(int numColors, color mix) {
+  color[] colors = new color[numColors];
+
+  for (int i = 0; i < numColors; i++) {
+    int r = int(random(256));
+    int g = int(random(256));
+    int b = int(random(256));
+
+    r = int((r + red(mix)) / 2);
+    g = int((g + green(mix)) / 2);
+    b = int((b + blue(mix)) / 2);
+
+    colors[i] = color(r, g, b);
+  }
+  return colors;
+}
+
+// Returns true with probability 1/p and false with probability 1 - 1/p
+boolean coinFlip(int p) {
+  int seed = int(random(p));
+  if (seed == 0) {
+    return true;
+  }
+  return false
 }

@@ -1,29 +1,30 @@
 Graph g = new Graph();
-int numNodes = 120;
 ArrayList edgeArray = new ArrayList();
-color[] graphColors = [color(255,0,0), color(0,255,0), color(0,0,255)];
+color[] graphColors = [color(255,0,0), color(0,255,255), color(128,255,0)];
 int currentNode = 0;
 int[] order = pi(numNodes);
+boolean isThreeColored = true;
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
   makeEdgeArray();
   makeGraph();
-  frameRate(60);
+  frameRate(30);
 }
 
 void draw() {
   background(0);
   g.draw();
-  if (currentNode == 0) {
+  if (currentNode == numNodes && !certifyThreeColor(g)) {
     for (Node n: g.nodes) {
       n.nodeColor = 255;
     }
     order = pi(numNodes);
+    currentNode = 0;
+  } else if (currentNode < numNodes) {
+    colorNextNode(order[currentNode]);
+    currentNode = (currentNode + 1);
   }
-  colorNextNode(order[currentNode]);
-  currentNode = (currentNode + 1) % numNodes;
-
 }
 
 void makeGraph() {
@@ -32,8 +33,8 @@ void makeGraph() {
   }
 
   for (int[] e: edgeArray) {
-    int coinFlip = int(random(25));
-    if (coinFlip == 24) {
+    int coin = coinFlip(20);
+    if (coin) {
       g.addEdge((Node) g.nodes.get(e[0]), (Node) g.nodes.get(e[1]));
     }
   }
@@ -44,21 +45,21 @@ void makeEdgeArray() {
     for (int j = i; j < numNodes; j++) {
       if (j != i) {
         edgeArray.add([i,j]);
-      } 
+      }
     }
-  }
-}
-
-void makeGraphColors() {
-  for (int i = 3; i < 5; i++) {
-    int r = int(random(256));
-    int g = int(random(256));
-    int b = int(random(256));
-    graphColors[i] = color(r,g,b);
   }
 }
 
 void colorNextNode(int i) {
   int numColor =  int(random(graphColors.length));
   g.nodes.get(i).nodeColor = graphColors[numColor];
+}
+
+void certifyThreeColor(Graph g) {
+  for (Edge e: g.edges) {
+    if (e.n1.nodeColor == e.n2.nodeColor) {
+      return false;
+    }
+  }
+  return true;
 }
