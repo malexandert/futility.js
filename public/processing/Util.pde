@@ -62,13 +62,11 @@ int[] pi(int n) {
   return base;
 }
 
-color[] randColors(int numColors, color mix) {
-  color[] colors = new color[numColors];
-
-  for (int i = 0; i < numColors; i++) {
-    int r = int(random(256));
-    int g = int(random(256));
-    int b = int(random(256));
+color[] mixColors(color[] colors, color mix) {
+  for (int i = 0; i < colors.length; i++) {
+    int r = red(colors[i]);
+    int g = green(colors[i]);
+    int b = blue(colors[i]);
 
     r = int((r + red(mix)) / 2);
     g = int((g + green(mix)) / 2);

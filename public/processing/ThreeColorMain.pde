@@ -1,6 +1,7 @@
 Graph g = new Graph();
 ArrayList edgeArray = new ArrayList();
-color[] graphColors = [color(255,0,0), color(0,255,255), color(128,255,0)];
+color[] baseColors = [color(255,0,0), color(0,255,255), color(128,255,0)];
+color[] graphColors = mixColors(baseColors, color(255,255,255));
 int currentNode = 0;
 int[] order = pi(numNodes);
 boolean isThreeColored = true;
