@@ -13,4 +13,12 @@ class Application extends Controller {
     Ok(views.html.main("art"))
   }
 
+  def infoloss = Action {
+    Ok(views.html.infoloss("information loss"))
+  }
+
+  def solvethemall = Action {
+    Ok(views.html.solvethemall("solve them all"))
+  }
+
 }
