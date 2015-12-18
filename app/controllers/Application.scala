@@ -5,8 +5,8 @@ import play.api.mvc._
 
 class Application extends Controller {
 
-  def processing = Action {
-    Ok(views.html.processing("futility"))
+  def futility = Action {
+    Ok(views.html.futility("futility"))
   }
 
   def main = Action {
