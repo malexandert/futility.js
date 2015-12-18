@@ -6,11 +6,11 @@ import play.api.mvc._
 class Application extends Controller {
 
   def processing = Action {
-    Ok(views.html.processing("Demo Processing.Js Page!"))
+    Ok(views.html.processing("futility"))
   }
 
   def main = Action {
-    Ok(views.html.main("futility"))
+    Ok(views.html.main("art"))
   }
 
 }
