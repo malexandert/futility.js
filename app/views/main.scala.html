@@ -1,15 +1,33 @@
-@(title: String)(content: Html)
+@(title: String)
 
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+        <script src="@routes.Assets.versioned("bootstrap/js/jquery.js")"></script>
+        <script src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+        <meta name="viewport" content="width =device-width, initial-scale=1">
     </head>
     <body>
-        @content
+    	<div class="container center-block">
+    		<h2 class="text-center">futility: an exploration in exploration <small>marcus alexander todd</small></h2>
+
+            <p class="text-center">as a computer scientist, i tend to think of life in terms of problems and solutions. what are the issues, what are the tools provided to me, and how can i use those tools to come up with a solution? this semester, in the print/photo workshop, i had the opportunity to use my analytical background to frame my thus far undirected artistic pursuits. though i started out trying to edge away from the computer science label while, at the same time, purposely avoiding the "artist" aesthetic, </p>
+    	</div>
+
+        <div class="gallery-link col-sm-3 text-center">
+            a high-level view
+        </div>
+        <div class="gallery-link col-sm-3 text-center">
+            case study: the gradient question
+        </div>
+        <div class="gallery-link col-sm-3 text-center">
+            if you solve one, you solve them all
+        </div>
+        <div class="gallery-link col-sm-3 text-center">
+            futility
+        </div>
     </body>
 </html>
