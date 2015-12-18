@@ -7,7 +7,7 @@ int[] order = pi(numNodes);
 boolean isThreeColored = true;
 
 void setup() {
-  size(window.innerWidth, window.innerHeight);
+  size(sketchWidth, sketchHeight);
   makeEdgeArray();
   makeGraph();
   frameRate(30);

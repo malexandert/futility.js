@@ -4,6 +4,7 @@
 <html>
     <head>
         <script src="@routes.Assets.versioned("javascripts/processing.js")"></script>
+        <script src="@routes.Assets.versioned("bootstrap/js/jquery.js")"></script>
     </head>
     <body>
         <canvas data-processing-sources=
@@ -13,8 +14,11 @@
         	 @routes.Assets.versioned("processing/ThreeColorMain.pde")
         	 @routes.Assets.versioned("processing/Edge.pde")"></canvas>
         <script type="application/javascript">
-            var numNodes = 30;
+            var numNodes = 50;
             var graphDensity = 0.3;
+            var radius = 20;
+            var sketchHeight = $(window).innerHeight();
+            var sketchWidth = $(window).innerWidth();
         </script>
      </body>
  </html>

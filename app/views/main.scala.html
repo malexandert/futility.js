@@ -6,28 +6,61 @@
     <head>
         <title>@title</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700">
         <script src="@routes.Assets.versioned("bootstrap/js/jquery.js")"></script>
         <script src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/processing.js")"></script>
         <meta name="viewport" content="width =device-width, initial-scale=1">
     </head>
     <body>
     	<div class="container center-block">
-    		<h2 class="text-center">futility: an exploration in exploration <small>marcus alexander todd</small></h2>
+    		<h2 class="site-title text-center">an exploration in exploration <small>marcus alexander todd</small></h2>
 
-            <p class="text-center">as a computer scientist, i tend to think of life in terms of problems and solutions. what are the issues, what are the tools provided to me, and how can i use those tools to come up with a solution? this semester, in the print/photo workshop, i had the opportunity to use my analytical background to frame my thus far undirected artistic pursuits. though i started out trying to edge away from the computer science label while, at the same time, purposely avoiding the "artist" aesthetic, </p>
+            <p class="text-center">as a computer scientist, i tend to think of life in terms of problems and solutions. what are the issues, what are the tools provided to me, and how can i use those tools to come up with a solution? this semester, in the print/photo workshop, i had the opportunity to use my analytical background to frame my thus far undirected artistic pursuits. though i started out trying to edge away from the computer science label while, at the same time, purposely avoiding the "artist" aesthetic, eventually i did manage to reconcile the two halves of my brain. art became a problem to me, and i tried to come up with a variety of interesting solutions. here's how it turned out.</p>
     	</div>
 
-        <div class="gallery-link col-sm-3 text-center">
-            a high-level view
+        <div class="col-md-3">
+            <div class="gallery-link col-centered text-center high-level">
+            </div>
+            <div class="gallery-text col-centered text-center">
+                a high-level view
+            </div>
         </div>
-        <div class="gallery-link col-sm-3 text-center">
-            case study: the gradient question
+        <div class="col-md-3">   
+            <div class="gallery-link col-centered text-center">
+                case study: the gradient question
+            </div>
         </div>
-        <div class="gallery-link col-sm-3 text-center">
-            if you solve one, you solve them all
+        <div class="col-md-3">
+            <div class="gallery-link col-centered text-center solvethemall">
+            </div>
+            <div class="gallery-text col-centered text-center">
+                solve them all
+            </div>
         </div>
-        <div class="gallery-link col-sm-3 text-center">
-            futility
+        <div class="col-md-3 sketch">
+            <a href="@routes.Application.processing">
+                <div class="gallery-link col-centered text-center sketch">
+                    <canvas data-processing-sources=
+                        "@routes.Assets.versioned("processing/Node.pde")
+                         @routes.Assets.versioned("processing/Graph.pde")
+                         @routes.Assets.versioned("processing/Util.pde")
+                         @routes.Assets.versioned("processing/ThreeColorMain.pde")
+                         @routes.Assets.versioned("processing/Edge.pde")">
+                    </canvas>
+                    <script type="application/javascript">
+                        var numNodes = 30;
+                        var graphDensity = 1;
+                        var radius = 10;
+                        var sketchHeight = 300;
+                        var sketchWidth = 300;
+                    </script>
+                </div>
+            </a>
+            <div class="gallery-text col-centered text-center">
+                futility
+            </div>
         </div>
     </body>
 </html>
