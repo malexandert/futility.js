@@ -26,6 +26,9 @@ div.gallery-link {
 }
 
 .solvethemall {
-	background-size: contain;
 	background-image: url("../images/solvethemall.jpg");
+}
+
+.grad {
+	background: linear-gradient(blue, white);
 }
