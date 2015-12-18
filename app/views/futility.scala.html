@@ -3,22 +3,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="@routes.Assets.versioned("javascripts/processing.js")"></script>
+        <title>@title</title>
+        <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/futility.css")">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700">
         <script src="@routes.Assets.versioned("bootstrap/js/jquery.js")"></script>
+        <script src="@routes.Assets.versioned("bootstrap/js/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/processing.js")"></script>
+        <meta name="viewport" content="width =device-width, initial-scale=1">
     </head>
     <body>
-        <canvas data-processing-sources=
-        	"@routes.Assets.versioned("processing/Node.pde")
-        	 @routes.Assets.versioned("processing/Graph.pde")
-        	 @routes.Assets.versioned("processing/Util.pde")
-        	 @routes.Assets.versioned("processing/ThreeColorMain.pde")
-        	 @routes.Assets.versioned("processing/Edge.pde")"></canvas>
-        <script type="application/javascript">
-            var numNodes = 50;
-            var graphDensity = 0.3;
-            var radius = 20;
-            var sketchHeight = $(window).innerHeight();
-            var sketchWidth = $(window).innerWidth();
-        </script>
+        <div class="container center-block">
+            <h2 class="site-title text-center">futility</h2>
+
+            <p class="text-center text-lowercase">
+                If at first you don't succeed, try try again, they say. But what if trying isn't enough? What if you try and try as many times as your body is able, and yet you still don't succeed. What if we're tasked to do the impossible? Then use a computer, they say. But computers are only so fast and clever. Eventually, they reach their limit as well. And yet, they keep trying, and trying, and trying…
+
+Futility is a program that will attempt to solve one of the hardest open problems in computer science, the 3-colorability problem. However, by its name, it will never stop. Though computers will get smarter and smarter as the days go on, there are problems where even they can just try and try and try. 
+
+It’s kind of beautiful to watch.
+            </p>
+        </div>
+        <div class="row sketch-row">
+            <div class="sketch">
+                <canvas data-processing-sources=
+                    "@routes.Assets.versioned("processing/Node.pde")
+                     @routes.Assets.versioned("processing/Graph.pde")
+                     @routes.Assets.versioned("processing/Util.pde")
+                     @routes.Assets.versioned("processing/ThreeColorMain.pde")
+                     @routes.Assets.versioned("processing/Edge.pde")">
+                </canvas>
+                <script type="application/javascript">
+                    var numNodes = 150;
+                    var graphDensity = 0.3;
+                    var radius = 25;
+                    var sketchHeight = 800;
+                    var sketchWidth = $(".sketch-row").width();
+                </script>
+            </div>
+        </div>
      </body>
  </html>
