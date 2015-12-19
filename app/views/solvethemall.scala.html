@@ -19,5 +19,13 @@
             <p class="text-center text-lowercase">
             the p vs np problem, the biggest open problem in computer science, is phrased thusly - is the class of problems where a solution can be efficiently found, p, the same as the class of problems where a solution can be efficiently verified, np. a subresult of research into this field is that there are a group of hard problems, np-complete problems, that are all just as hard to solve. if an efficient algorithm can solve even one of these problems, it can be easily adapted to solve any of them. these represent for this piece, i tried to combine the figure-based formal style of a high-level mathematics textbook with the approachability of a children's workbook and a commercialized aesthetic. this was my first attempt at bringing mathematics into the art world in a non-abstract sense.
             </p>
+        </div>
+        @for(image <- 0 to 4) {
+            @defining("images/solvethemall_" + image + ".jpg") { imageLink =>
+                <div class="row">
+                    <img class="gallery-img img-responsive img-rounded" src="@routes.Assets.versioned(imageLink)">
+                </div>
+            }
+        }
     </body>
 </html>

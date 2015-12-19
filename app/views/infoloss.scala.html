@@ -19,5 +19,13 @@
             <p class="text-center text-lowercase">
                 my first foray of the semester involved utilizing a variety of photographic formats to entertain the idea of information loss. we like to think of photographs as records of the truth, and sometimes we consider them even more real than reality itself. my goal was to see how pictures of pictures and distort and obscure the source
             </p>
+
+            @for(image <- 0 until 4) {
+            @defining("images/infoloss_" + image + ".jpg") { imageLink =>
+                <div class="row">
+                    <img class="gallery-img img-responsive img-rounded" src="@routes.Assets.versioned(imageLink)">
+                </div>
+                }
+            }
     </body>
 </html>
