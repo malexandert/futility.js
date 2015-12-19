@@ -29,5 +29,5 @@ body {
 }
 
 .grad {
-	background: linear-gradient(#003399, white);
+	background-image: url("../images/gradient.jpg");
 }
