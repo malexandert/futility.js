@@ -1,9 +1,9 @@
-@(title: String)
+@(pageTitle: String, sectionTitle: String, sectionBody: String, imagePrefix: String, numPictures: Int)
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@title</title>
+        <title>@pageTitle</title>
         <link rel="stylesheet" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
         <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/main.css")">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,700">
@@ -14,14 +14,14 @@
     </head>
     <body>
         <div class="container center-block">
-            <h2 class="site-title text-center">information loss</h2>
+            <h2 class="site-title text-center">@sectionTitle</h2>
 
             <p class="text-center text-lowercase">
-                my first foray of the semester involved utilizing a variety of photographic formats to entertain the idea of information loss. we like to think of photographs as records of the truth, and sometimes we consider them even more real than reality itself. my goal was to see how pictures of pictures and distort and obscure the source
+                @sectionBody
             </p>
 
-            @for(image <- 0 until 4) {
-            @defining("images/infoloss_" + image + ".jpg") { imageLink =>
+            @for(image <- 0 until numPictures) {
+            @defining("images/" + imagePrefix + "_" + image + ".jpg") { imageLink =>
                 <div class="row">
                     <img class="gallery-img img-responsive img-rounded" src="@routes.Assets.versioned(imageLink)">
                 </div>
