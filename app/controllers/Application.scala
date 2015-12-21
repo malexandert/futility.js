@@ -8,7 +8,7 @@ import play.api.mvc._
 class Application extends Controller {
 
   def main = Action {
-    Ok(views.html.main("art"))
+    Ok(views.html.main("print/photo"))
   }
 
   def futility = Action {
